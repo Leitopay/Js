@@ -1,121 +1,46 @@
-// let nombre = "Leonardo";
-// let edad = 19;
-// let esEstudiante = true; // sin comillas para que sea booleano
+// Calculadora de Indice de Masa Corporal
 
-// console.log(nombre);
-// console.log(edad);
-// console.log(esEstudiante);
-
-// let numero1 = 10;
-// let numero2 = 5;
-// let suma = numero1 + numero2;
-
-// console.log("La suma de " + numero1 + " y " + numero2 + " es: " + suma);
-
-// let a = 12;
-// let b = 15;
-
-// let resta = a - b;
-// let multiplicación = a * b;
-// let division = a / b;
-
-// console.log("La resta de " + a + " y " + b + " es: " + resta);
-// console.log("La multiplicación de " + a + " y " + b + " es: " + multiplicación);
-// console.log("La división de " + a + " y " + b + " es: " + division);
-
-// let mayor = true;
-// let dinero = true;
-
-// if(mayor && dinero) {
-//     console.log("Podes ingresar")
-// } else {
-//     console.log("No podes ingresar")
-// }
-
-// let paroimpar = Number(prompt("Ingresa un numero"));
-
-// if(paroimpar % 2 === 0)  {
-//     console.log("Es par")
-// } else {
-//     console.log("Es impar")
-// }
-
-// let edadi = Number(prompt("Ingrese su edad"));
-
-// if(edadi >= 18) {
-//     console.log("Eres mayor de edad")
-// } else {
-//     console.log("Eres menor de edad")
-// }
-
-// let numero1 = Number(prompt("Ingrese un numero"));
-// let numero2 = Number(prompt("Ingrese otro numero"));
-// let multiplicacion = numero1 * numero2;
-
-// console.log(multiplicacion)
-
-// let contraseña = prompt("Ingrese una contraseña");
-
-// if(contraseña === 'javascript123') {
-//     console.log("Bienvenido")
-// } else {
-//     console.log("Acceso denegado")
-// }
-
-// let numero = Number(prompt("Ingrese un numero:"));
-
-// if(numero > 0) {
-//     console.log("Es positivo")
-// } else if(numero === 0) {
-//     console.log("Es 0")
-// } else {
-//     console.log("Es negativo")
-// }
-
-// let diadelasemana = prompt("Ingresa un dia de la semana");
-
-// if(diadelasemana === 'sabado') {
-//     console.log("Es fin de semana")
-// } else if(diadelasemana === 'domingo') {
-//     console.log("Es fin de semana")
-// } else {
-//     console.log("Es un dia normal")
-// }
-100
-// let multiplo = Number(prompt("Ingrese un numero:"));
-
-// if(multiplo % 5 === 0) {
-//     console.log("Es multiplo de 5")
-// } else {
-//     console.log("No es multiplo de 5")
-// }
-
-// let altura = Number(prompt("Ingrese su estatura:"));
-
-// if(altura <= 120) {
-//     console.log("No puedes entrar")
-// } else if(altura >= 200) {
-//     console.log("Altura fuera de rango")
-// } else {
-//     console.log("Puedes entrar")
-// }
-
-// for(i = 0; i < 5; i++) {
-//     console.log("Hola mundo")
-// }
-
-// let i = 0
-
-// while(i < 5) {
-//     console.log("Hola mundo");
-//     i++
-// }
-
-const contraseña = "1234"
-let contraseñaingresada = prompt("Ingrese su contraseña: ");
-
-while(contraseñaingresada != contraseña) {
-    contraseñaingresada = prompt("Incorrecto, intente nuevamente: ");
-    
+// Función para calcular el IMC
+function calcularIMC(peso, altura) {
+    return peso / (altura * altura);
 }
 
+// Función para clasificar el IMC
+function clasificarIMC(imc) {
+    if (imc < 18.5) {
+        return "Bajo peso";
+    } else if (imc < 24.9) {
+        return "Peso normal";
+    } else if (imc < 29.9) {
+        return "Sobrepeso";
+    } else {
+        return "Obesidad";
+    }
+}
+
+// Array para almacenar los resultados
+let historialIMC = [];
+
+// Ciclo para repetir el cálculo si el usuario desea
+let continuar = true;
+while (continuar) {
+    let peso = parseFloat(prompt("Ingrese su peso en kg:"));
+    let altura = parseFloat(prompt("Ingrese su altura en metros:"));
+    
+    if (!isNaN(peso) && !isNaN(altura) && peso > 0 && altura > 0) {
+        let imc = calcularIMC(peso, altura);
+        let clasificacion = clasificarIMC(imc);
+        
+        alert(`Su IMC es ${imc.toFixed(2)} - ${clasificacion}`);
+        console.log(`IMC: ${imc.toFixed(2)} - Clasificación: ${clasificacion}`);
+        
+        historialIMC.push({ peso, altura, imc: imc.toFixed(2), clasificacion });
+    } else {
+        alert("Por favor, ingrese valores válidos.");
+    }
+    
+    continuar = confirm("¿Desea calcular otro IMC?");
+}
+
+// Mostrar el historial en consola
+console.log("Historial de IMC:", historialIMC);
