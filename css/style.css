@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenedor principal */
+h1 {
+    color: #333;
+}
+
+/* Formulario */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botón */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Resultado */
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Historial */
+#historial {
+    list-style: none;
+    padding: 0;
+    max-width: 300px; /* Limita el ancho del historial */
+    margin: 10px auto; /* Centrado */
+}
+
+#historial li {
+    background: white;
+    margin: 5px 0;
+    padding: 8px; /* Reduce el padding */
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Reduce el tamaño del texto */
+}
+
+/* Botón de borrar historial */
+#borrarHistorial {
+    background-color: #dc3545; /* Color rojo */
+    color: white;
+    border: none;
+    padding: 6px 10px; /* Reduce el tamaño del botón */
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: auto; /* Hace que el ancho se ajuste al contenido */
+    min-width: 100px; /* Define un ancho mínimo */
+}
+
+#borrarHistorial:hover {
+    background-color: #c82333; /* Un rojo más oscuro al pasar el mouse */
+}
