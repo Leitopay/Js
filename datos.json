@@ -1,0 +1,7 @@
+[
+    { "min": 0, "max": 18.49, "clasificacion": "Bajo peso" },
+    { "min": 18.5, "max": 24.99, "clasificacion": "Peso normal" },
+    { "min": 25, "max": 29.99, "clasificacion": "Sobrepeso" },
+    { "min": 30, "max": null, "clasificacion": "Obesidad" }
+  ]
+  
