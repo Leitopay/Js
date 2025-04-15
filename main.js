@@ -45,13 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let historialIMC = JSON.parse(localStorage.getItem("historialIMC")) || [];
 
     // Función para renderizar historial en el DOM
-    // Función para renderizar historial en el DOM
     function mostrarHistorial() {
     const contenedor = document.getElementById("historial");
     contenedor.innerHTML = "";
     historialIMC.forEach((registro) => {
         const card = document.createElement("div");
-        card.className = "card animate__animated animate__fadeIn"; // Añadimos animación
+        card.className = "card animate__animated animate__fadeIn";
         card.innerHTML = `
             <p><strong>Fecha:</strong> ${registro.fecha}</p>
             <p><strong>Peso:</strong> ${registro.peso} kg</p>
