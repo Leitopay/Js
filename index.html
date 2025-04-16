@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
     <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
-    <h1>Calculadora de IMC</h1>
-    <form id="imcForm">
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" required>
-        
-        <label for="altura">Altura (m):</label>
-        <input type="number" id="altura" step="0.01" required>
-        
-        <button type="submit">Calcular</button>
-    </form>
+    <div class="contenedor">
+        <h1>Calculadora de IMC</h1>
+        <form id="imcForm">
+            <input type="number" id="peso" placeholder="Peso (kg)" required>
+            <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
+            <input type="number" id="edad" placeholder="Edad" required>
+            <select id="genero" required>
+                <option value="" disabled selected>Selecciona tu género</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            <input type="submit" value="Calcular IMC">
+            <button type="button" id="borrarHistorial">Borrar Historial</button>
+        </form>
+    </div>
+    
     
     <div id="resultado"></div>
-    <h2>Historial</h2>
     <ul id="historial"></ul> <!-- Lista para mostrar el historial -->
 
-    <button id="borrarHistorial">Borrar Historial</button> <!-- Botón para borrar el historial -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
     <script src="/main.js"></script>
